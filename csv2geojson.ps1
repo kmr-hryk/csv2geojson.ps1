@@ -9,12 +9,6 @@ Param (
 #CSVファイルのフルパスを取得
 $Filename = $(Get-ChildItem $csv).FullName
 
-#$csv_data = Import-Csv $Filename
-
-#$json_data = ConvertTo-Json $csv_data
-
-#Write-Output $json_data.length
-
 #要素の名前を取得
 $fieldname = $(Get-Content $Filename | Select-Object -First 1) -split ","
 $Column_count = $fieldname.length
