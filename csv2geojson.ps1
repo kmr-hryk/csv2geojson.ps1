@@ -48,6 +48,7 @@ $data_body | ForEach-Object {
    $coodinates = '[ ' + $body[$Y -1] + ', ' + $body[$X -1] + ' ]'
    $element = $element.Trim(",") + " "
    $feature = $('{ "type": "Feature", "properties": {' + $element + '}, "geometry": { "type": "Point", "coordinates": ' + $coodinates + ' } }')
+   #最後の行以外は最後にカンマを追加する
    if ( $LineNum -ne ($data_body.length -1)) {
       $feature = $feature + ","
    }
